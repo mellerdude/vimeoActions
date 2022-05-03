@@ -2,7 +2,6 @@ import vimeo
 import argparse
 
 
-# --------------------Login------------------------
 def login(token, key, secret):
     '''
     API Login to Vimeo
@@ -17,7 +16,6 @@ def login(token, key, secret):
     return client
 
 
-# --------------------Checking Connection------------------------
 def get_user(client):
     '''
     Get Vimeo Username
@@ -52,7 +50,8 @@ def get_video_name(client, video_id):
     assert video_name is not None, 'Could\'nt parse video response'
 
     return video_name
-# --------------------Post Comment------------------------
+
+
 def post_comment(client, video_id, content):
     '''
     Post a comment on a video using Video ID
@@ -67,10 +66,10 @@ def post_comment(client, video_id, content):
     assert response.status_code == 201, 'Comment was not posted'
 
 
-# --------------------Get Views------------------------
 def get_views(client, video_id):
     '''
     Get amount of views on a video, using Video ID
+
     :param client:
     :param video_id:
     :return:
@@ -85,7 +84,6 @@ def get_views(client, video_id):
     return views
 
 
-# --------------------Get Likes------------------------
 def get_likes(client, video_id):
     '''
     Get amount of likes on a video, using Video ID
